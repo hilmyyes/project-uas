@@ -29,9 +29,11 @@
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
-                    android:text="Register Form"
-                    android:textSize="20sp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="REGISTER ACCOUNT"
+                    android:textColor="#171717"
+                    android:textSize="34sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
@@ -118,14 +120,17 @@
 
                 <Button
                     android:id="@+id/btnOk"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="24dp"
                     android:layout_marginEnd="24dp"
+                    android:backgroundTint="#283E50"
                     android:onClick="@{listener::onButtonClick}"
                     android:tag="@{user.uuid}"
-                    android:text="Ok"
+                    android:text="Register"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPhoto" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -153,29 +158,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="24dp"
                     android:layout_marginEnd="24dp"
                     android:hint="Photo"
-                    app:hintAnimationEnabled="true"
-                    app:hintEnabled="true"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutRePass">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@{user.photo}" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayoutRePass"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="24dp"
-                    android:hint="Retype Password"
                     app:hintAnimationEnabled="true"
                     app:hintEnabled="true"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -184,8 +169,10 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:text="@{user.photo}" />
                 </com.google.android.material.textfield.TextInputLayout>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 

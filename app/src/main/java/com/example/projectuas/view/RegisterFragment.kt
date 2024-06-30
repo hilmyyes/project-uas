@@ -39,33 +39,6 @@ class RegisterFragment : Fragment(), ButtonClickListener {
 
         viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
-
-
-//        binding.btnOk.setOnClickListener {
-//            var firstName = binding.textInputLayoutFirst.editText?.text.toString()
-//            var lastName = binding.textInputLayoutLast.editText?.text.toString()
-//            var email = binding.textInputLayoutEmail.editText?.text.toString()
-//            var username = binding.textInputLayoutUsername.editText?.text.toString()
-//            var password = binding.textInputLayoutPass.editText?.text.toString()
-//            var rePass = binding.textInputLayoutRePass.editText?.text.toString()
-//            var photo = binding.textInputLayoutPhoto.editText?.text.toString()
-//
-//
-//            //Check if password and retype password is same
-//            if(password == rePass)
-//            {
-//                viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
-//                viewModel.fetchRegister(firstName, lastName, email, username, password, photo)
-//
-//                viewModel.userRegistLD.observe(viewLifecycleOwner, Observer {
-//                    if(it == true){
-//                        val action = RegisterFragmentDirections.actionLoginFragment()
-//                        Navigation.findNavController(view).navigate(action)
-//                    }
-//                })
-//            }
-//
-//        }
     }
 
     override fun onButtonClick(v: View) {
@@ -75,19 +48,19 @@ class RegisterFragment : Fragment(), ButtonClickListener {
         var email = binding.textInputLayoutEmail.editText?.text.toString()
         var username = binding.textInputLayoutUsername.editText?.text.toString()
         var password = binding.textInputLayoutPass.editText?.text.toString()
-        var rePass = binding.textInputLayoutRePass.editText?.text.toString()
+//        var rePass = binding.textInputLayoutRePass.editText?.text.toString()
         var photo = binding.textInputLayoutPhoto.editText?.text.toString()
 
 //        Log.d("Check", binding.user!!.password)
 
-        if (password == rePass) {
+//        if (password == rePass) {
             binding.user = Users(firstName, lastName, email, username, password, photo)
             viewModel.fetchRegister(binding.user!!)
             Toast.makeText(v.context, "News Added", Toast.LENGTH_SHORT).show()
 
             val action = RegisterFragmentDirections.actionLoginFragment()
             Navigation.findNavController(v).navigate(action)
-        }
+//        }
     }
 
 

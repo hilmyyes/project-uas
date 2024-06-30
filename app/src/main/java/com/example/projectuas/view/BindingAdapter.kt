@@ -24,11 +24,3 @@ fun loadImage(v:ImageView, url: String?){
         }
     }
 }
-
-//@BindingAdapter("android:imagesUrl")
-//fun loadImage(v:ImageView, url: String){
-//    val picasso = Picasso.Builder(v.context)
-//    picasso.listener { picasso, uri, exception -> exception.printStackTrace() }
-//    picasso.build().load(url).into(v)
-//    v.visibility = View.VISIBLE
-//}

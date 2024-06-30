@@ -51,8 +51,6 @@ class MainActivity : AppCompatActivity() {
         if(!userViewModel.isUserLoggedIn()){
             Log.d("Check exception", "Berhasil")
             navController.navigate(R.id.loginFragment)
-//            val action = HomeListFragmentDirections.actionHomeLoginFragment()
-//            Navigation.findNavController(view).navigate(action)
         }
     }
 

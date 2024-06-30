@@ -25,28 +25,6 @@ class HomeListAdapter (val homeList: ArrayList<News>)
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         holder.binding.news = homeList[position]
         holder.binding.navListener = this
-//        holder.binding.txtTitle.text =homeList[position].title
-//        holder.binding.txtUsername.text = homeList[position].author
-//        holder.binding.txtDesc.text = homeList[position].desc
-
-//        holder.binding.btnRead.setOnClickListener {
-//            val action = HomeListFragmentDirections.actionHomeDetailFragment(homeList[position].uuid.toString())
-//            Navigation.findNavController(it).navigate(action)
-//        }
-
-//        val picasso = Picasso.Builder(holder.itemView.context)
-//        picasso.listener { picasso, uri, exception -> exception.printStackTrace() }
-//        picasso.build().load(homeList[position].image).into(holder.binding.imgView, object :Callback{
-//
-//            override fun onSuccess() {
-//                holder.binding.loadImage.visibility = View.INVISIBLE
-//                holder.binding.imgView.visibility = View.VISIBLE
-//            }
-//
-//            override fun onError(e: Exception?) {
-//                Log.d("Cek", "Error")
-//            }
-//        })
     }
 
     fun updateHomeList(newHomeList: List<News>){

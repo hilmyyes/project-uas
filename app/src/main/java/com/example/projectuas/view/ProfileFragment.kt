@@ -21,7 +21,7 @@ import com.example.projectuas.viewModel.UserViewModel
 class ProfileFragment : Fragment(), ButtonActionNavClickListener, ButtonClickListener {
     private lateinit var viewModel: UserViewModel
     private lateinit var binding: FragmentProfileBinding
-//    val userAccount = requireActivity().getSharedPreferences("loginAccount", Context.MODE_PRIVATE)
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,12 +44,9 @@ class ProfileFragment : Fragment(), ButtonActionNavClickListener, ButtonClickLis
         })
 
         viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
-//        viewModel.userLoginLD.observe(viewLifecycleOwner, Observer {
-//            binding.user = it
-//        })
+
 
         val userAccount = requireActivity().getSharedPreferences("loginAccount", Context.MODE_PRIVATE)
-//        val id = userAccount.getString("id", "")
         val firstName = userAccount.getString("firstName", "")
         val lastName = userAccount.getString("lastName", "")
         val email = userAccount.getString("email", "")
@@ -59,30 +56,6 @@ class ProfileFragment : Fragment(), ButtonActionNavClickListener, ButtonClickLis
         Log.d("Check", photo.toString())
 
         binding.user = Users(firstName.toString(), lastName.toString(), email.toString(), username.toString(), oldPassword.toString(), photo.toString())
-
-//        Picasso.get().load(photo).into(binding.imgProfile)
-//        binding.textInputLayoutFirstName.editText?.setText(firstName)
-//        binding.textInputLayoutLastName.editText?.setText(lastName)
-
-//        binding.btnUpdate.setOnClickListener {
-//            if(oldPassword == binding.textInputLayoutOldPass.editText?.text.toString()){
-//                viewModel.fetchUpdate(id.toString(), binding.textInputLayoutFirstName.editText?.text.toString(), binding.textInputLayoutLastName.editText?.text.toString(), binding.textInputLayoutNewPass.editText?.text.toString())
-//                viewModel.userUpdateLD.observe(viewLifecycleOwner, Observer {
-//                    if(it == true)
-//                    {
-//                        binding.textInputLayoutOldPass.editText?.setText("")
-//                        binding.textInputLayoutNewPass.editText?.setText("")
-//                        Toast.makeText(requireContext(), "Update Success", Toast.LENGTH_SHORT).show()
-//                    }
-//                })
-//            }
-//        }
-
-//        binding.btnLogout.setOnClickListener {
-//            userAccount.edit().clear().apply()
-//            val action = ProfileFragmentDirections.actionProfileLoginFragment()
-//            Navigation.findNavController(view).navigate(action)
-//        }
 
     }
 
@@ -95,7 +68,6 @@ class ProfileFragment : Fragment(), ButtonActionNavClickListener, ButtonClickLis
         if(oldPassword == binding.textInputLayoutOldPass.editText?.text.toString()){
 
             viewModel.fetchUpdate(binding.textInputLayoutFirstName.editText?.text.toString(), binding.textInputLayoutLastName.editText?.text.toString(), newPassword, id.toString().toInt())
-//            viewModel.fetchUpdate(id.toString(), binding.textInputLayoutFirstName.editText?.text.toString(), binding.textInputLayoutLastName.editText?.text.toString(), binding.textInputLayoutNewPass.editText?.text.toString())
             viewModel.userUpdateLD.observe(viewLifecycleOwner, Observer {
                 if(it == true)
                 {
@@ -104,6 +76,8 @@ class ProfileFragment : Fragment(), ButtonActionNavClickListener, ButtonClickLis
                     Toast.makeText(requireContext(), "Update Success", Toast.LENGTH_SHORT).show()
                 }
             })
+        }else{
+            Toast.makeText(requireContext(),"Gagal Update Password, old password tidak sesuai !", Toast.LENGTH_SHORT).show()
         }
     }
 

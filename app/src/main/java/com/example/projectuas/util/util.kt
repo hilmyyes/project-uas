@@ -5,7 +5,7 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.projectuas.model.NewsDatabase
 
-val DB_NAME = "hobbydb"
+val DB_NAME = "newsdb"
 
 val MIGRATION_1_2 = object : Migration(1, 2) {
     override fun migrate(db: SupportSQLiteDatabase) {

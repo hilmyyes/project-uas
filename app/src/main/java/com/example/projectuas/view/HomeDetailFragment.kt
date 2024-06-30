@@ -47,41 +47,7 @@ class HomeDetailFragment : Fragment() {
                 Toast.makeText(requireContext(), "Failed Detail Page", Toast.LENGTH_SHORT).show()
             }else{
                 binding.news = it
-//                binding.txtTitleDetail.setText(it.title)
-//                binding.txtAuthorDetail.setText("@${it.author}")
-//                val picasso = Picasso.Builder(binding.root.context)
-//                picasso.listener { picasso, uri, exception -> exception.printStackTrace() }
-//                picasso.build().load(binding.news!!.image).into(binding.imgViewDetail)
-
             }
-
-            //Multi Page
-//            val news = it.news
-//            val size = news?.size ?: 0
-//            var index = 0
-//
-//            if(size > 0){
-//                binding.txtDescDetail.text = news?.get(index)
-//                binding.btnBack.isEnabled = false
-//
-//                binding.btnNext.setOnClickListener {
-//                    index++
-//                    binding.txtDescDetail.text = news?.get(index)
-//                    binding.btnBack.isEnabled = true
-//                    if(index == size - 1) {
-//                        binding.btnNext.isEnabled = false
-//                    }
-//                }
-//
-//                binding.btnBack.setOnClickListener {
-//                    index--
-//                    binding.txtDescDetail.text = news?.get(index)
-//                    binding.btnNext.isEnabled = true
-//                    if(index == 0){
-//                        binding.btnBack.isEnabled = false
-//                    }
-//                }
-//            }
         })
     }
 }

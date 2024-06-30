@@ -14,11 +14,6 @@ import com.example.projectuas.R
 import com.example.projectuas.databinding.FragmentHomeListBinding
 import com.example.projectuas.viewModel.HomeViewModel
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeListFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeListFragment : Fragment() {
     private lateinit var viewModel:HomeViewModel
     private lateinit var binding: FragmentHomeListBinding
@@ -28,7 +23,6 @@ class HomeListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentHomeListBinding.inflate(inflater, container, false)
         return binding.root
     }

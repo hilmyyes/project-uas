@@ -16,6 +16,7 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
+import com.squareup.picasso.Picasso
 
 class LoginFragment : Fragment(), ButtonClickListener, ButtonActionNavClickListener {
     private lateinit var viewModel: UserViewModel
@@ -51,6 +52,9 @@ class LoginFragment : Fragment(), ButtonClickListener, ButtonActionNavClickListe
         setHasOptionsMenu(true)
 
         viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+
+        Picasso.get()
+            .load("https://ak.gamepress.gg/sites/default/files/styles/banner_image/public/2020-02/Arknights%20News%20Announcements.png?h=ceb20177&itok=mZ5XQbft").into(binding.imgBg);
 
     }
 
