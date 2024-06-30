@@ -56,9 +56,9 @@
                     android:id="@+id/txtInputUsername"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="24dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="32dp"
                     android:hint="Username"
                     app:hintAnimationEnabled="true"
                     app:hintEnabled="true"
@@ -70,6 +70,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/karla"
                         android:text="@{user.username}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,9 +78,9 @@
                     android:id="@+id/textInputLayoutPassword"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="24dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
                     android:hint="Password"
                     app:hintAnimationEnabled="true"
                     app:hintEnabled="true"
@@ -90,6 +91,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/karla"
                         android:text="@{user.password}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -97,10 +99,11 @@
                     android:id="@+id/btnLogin"
                     android:layout_width="0dp"
                     android:layout_height="70dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="24dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="32dp"
                     android:backgroundTint="#283E50"
+                    android:fontFamily="sans-serif-black"
                     android:onClick="@{listener::onButtonClick}"
                     android:tag="@{user.uuid}"
                     android:text="Login"
@@ -115,8 +118,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="52dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginEnd="8dp"
                     android:text="Don't Have Acoount?"
+                    android:textStyle="italic"
                     app:layout_constraintEnd_toStartOf="@+id/btnRegister"
                     app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
@@ -130,6 +134,7 @@
                     android:onClick="@{navListener::onButtonActionNavClick}"
                     android:text="Register"
                     android:textColor="#286FFF"
+                    android:textStyle="italic"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 

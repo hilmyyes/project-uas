@@ -28,45 +28,89 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/imgProfile"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
-                    android:imagesUrl="@{user.photo}"
-                    android:src="@drawable/ic_launcher_foreground"
+                    android:layout_marginTop="48dp"
+                    app:cardCornerRadius="200dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgProfile"
+                            android:layout_width="125dp"
+                            android:layout_height="125dp"
+                            android:imagesUrl="@{user.photo}"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_launcher_foreground"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintCircleRadius="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textViewProfName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@{user.username}"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+                <TextView
+                    android:id="@+id/textViewProfEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/karla_italic"
+                    android:text="@{user.email}"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewProfName" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayoutFirstName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="70dp"
-                    android:layout_marginEnd="24dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
                     android:hint="First Name"
                     app:hintAnimationEnabled="true"
                     app:hintEnabled="true"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imgProfile">
+                    app:layout_constraintTop_toBottomOf="@+id/textViewProfEmail">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@{user.first_name}" />
+                        android:fontFamily="@font/karla"
+                        android:text="@={user.first_name}"
+                        android:textSize="16sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayoutLastName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="24dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
                     android:hint="Last name"
                     app:hintAnimationEnabled="true"
                     app:hintEnabled="true"
@@ -77,16 +121,18 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@{user.last_name}" />
+                        android:fontFamily="@font/karla"
+                        android:text="@={user.last_name}"
+                        android:textSize="16sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayoutOldPass"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="24dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
                     android:hint="Old Password"
                     app:hintAnimationEnabled="true"
                     app:hintEnabled="true"
@@ -96,40 +142,18 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/karla"
+                        android:textSize="16sp" />
                 </com.google.android.material.textfield.TextInputLayout>
-
-                <Button
-                    android:id="@+id/btnLogout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="48dp"
-                    android:backgroundTint="@android:color/holo_red_dark"
-                    android:onClick="@{navListener::onButtonActionNavClick}"
-                    android:text="Logout"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnUpdate" />
-
-                <Button
-                    android:id="@+id/btnUpdate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:onClick="@{listener::onButtonClick}"
-                    android:tag="@{user.uuid}"
-                    android:text="Update"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutNewPass" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayoutNewPass"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="24dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
                     android:hint="New Password"
                     app:hintAnimationEnabled="true"
                     app:hintEnabled="true"
@@ -139,8 +163,41 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/karla"
+                        android:textSize="16sp" />
                 </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btnLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:backgroundTint="@android:color/holo_red_light"
+                    android:fontFamily="sans-serif-black"
+                    android:onClick="@{navListener::onButtonActionNavClick}"
+                    android:text="Logout"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutNewPass" />
+
+                <Button
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:backgroundTint="#283E50"
+                    android:fontFamily="sans-serif-black"
+                    android:onClick="@{listener::onButtonClick}"
+                    android:tag="@{user.uuid}"
+                    android:text="Update"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutNewPass" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 

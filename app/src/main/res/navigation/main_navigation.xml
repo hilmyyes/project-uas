@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/itemHome"
         android:name="com.example.projectuas.view.HomeListFragment"
-        android:label="fragment_home_list"
-        tools:layout="@layout/fragment_home_list" >
+        android:label="HOME"
+        tools:layout="@layout/fragment_home_list">
         <action
             android:id="@+id/actionHomeDetailFragment"
             app:destination="@id/homeDetailFragment" />
@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.projectuas.view.LoginFragment"
-        android:label="fragment_login"
+        android:label="LOGIN"
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/actionRegisterFragment"
@@ -35,8 +35,8 @@
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.projectuas.view.RegisterFragment"
-        android:label="fragment_register"
-        tools:layout="@layout/fragment_register" >
+        android:label="REGISTER"
+        tools:layout="@layout/fragment_register">
         <action
             android:id="@+id/actionLoginFragment"
             app:destination="@id/loginFragment"
@@ -46,8 +46,8 @@
     <fragment
         android:id="@+id/itemProfile"
         android:name="com.example.projectuas.view.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
+        android:label="PROFILE"
+        tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/actionProfileLoginFragment"
             app:destination="@id/loginFragment" />
@@ -55,8 +55,8 @@
     <fragment
         android:id="@+id/homeDetailFragment"
         android:name="com.example.projectuas.view.HomeDetailFragment"
-        android:label="fragment_home_detail"
-        tools:layout="@layout/fragment_home_detail" >
+        android:label="DETAIL"
+        tools:layout="@layout/fragment_home_detail">
         <argument
             android:name="id"
             app:argType="string" />
@@ -64,6 +64,6 @@
     <fragment
         android:id="@+id/itemHistory"
         android:name="com.example.projectuas.view.HistoryFragment"
-        android:label="fragment_history"
+        android:label="HISTORY"
         tools:layout="@layout/fragment_history" />
 </navigation>
