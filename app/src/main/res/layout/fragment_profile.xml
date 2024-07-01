@@ -47,7 +47,7 @@
                             android:layout_width="125dp"
                             android:layout_height="125dp"
                             android:imagesUrl="@{user.photo}"
-                            android:scaleType="fitCenter"
+                            android:scaleType="centerCrop"
                             android:src="@drawable/ic_launcher_foreground"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintCircleRadius="16sp"

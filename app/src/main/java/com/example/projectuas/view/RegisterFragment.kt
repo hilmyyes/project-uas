@@ -48,19 +48,21 @@ class RegisterFragment : Fragment(), ButtonClickListener {
         var email = binding.textInputLayoutEmail.editText?.text.toString()
         var username = binding.textInputLayoutUsername.editText?.text.toString()
         var password = binding.textInputLayoutPass.editText?.text.toString()
-//        var rePass = binding.textInputLayoutRePass.editText?.text.toString()
         var photo = binding.textInputLayoutPhoto.editText?.text.toString()
 
-//        Log.d("Check", binding.user!!.password)
+        if (firstName.isNotEmpty() && lastName.isNotEmpty() && username.isNotEmpty() && password.isNotEmpty() && email.isNotEmpty() && photo.isNotEmpty()) {
 
-//        if (password == rePass) {
             binding.user = Users(firstName, lastName, email, username, password, photo)
             viewModel.fetchRegister(binding.user!!)
-            Toast.makeText(v.context, "News Added", Toast.LENGTH_SHORT).show()
+            Toast.makeText(v.context, "Register berhasil !! Silahkan Login", Toast.LENGTH_SHORT).show()
 
             val action = RegisterFragmentDirections.actionLoginFragment()
             Navigation.findNavController(v).navigate(action)
-//        }
+
+        } else {
+            Toast.makeText(context, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+        }
+
     }
 
 

@@ -87,6 +87,14 @@ class LoginFragment : Fragment(), ButtonClickListener, ButtonActionNavClickListe
                     Toast.makeText(requireContext(), "Username/Password not creditable", Toast.LENGTH_SHORT).show()
                 }
             })
+        }else{
+            //Pengecheckan
+            if(username.isEmpty()){
+                binding.txtInputUsername.error = "Username wajib di isi !"
+            }
+            if(password.isEmpty()){
+                binding.textInputLayoutPassword.error = "Password wajib di isi !"
+            }
         }
     }
 
